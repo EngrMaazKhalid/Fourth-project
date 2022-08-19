@@ -1,0 +1,20 @@
+.section2{
+    background-color: rgb(131, 130, 130);
+}
+ 
+
+
+.Card-section{
+    padding-top: 100px;
+    display: flex;
+     align-items: flex-end; 
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+}
+.cardform{
+    
+    display:flex;
+    flex-direction: row;
+    margin-right: auto;
+}

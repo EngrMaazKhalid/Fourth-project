@@ -1,0 +1,47 @@
+.main{
+    height: 80vh;
+    z-index: 0;
+  
+    
+  
+}
+
+
+
+.project_header{
+ /* background-image:  */
+ 
+position:relative;
+ background-image:linear-gradient(rgba(0, 0, 0, 0.699) ,rgba(0, 0, 0, 0.699)), url('./fikri-rasyid-3ba59K57wE4-unsplash.jpg');
+ background-size: cover;
+ background-position: center ;
+ height: 100%;
+ background-attachment: fixed;
+ clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%); 
+ z-index: 0;
+}
+
+
+ .train{
+    height:70px;
+    width: 70px;
+  
+} 
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    
+    
+   }
+
+   .Rail{
+    padding-top: 23px;
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: rgb(172, 172, 172);
+    font-weight: 800;
+   
+   }
+ 
