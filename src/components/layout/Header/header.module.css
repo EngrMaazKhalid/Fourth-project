@@ -28,6 +28,11 @@ position:relative;
   
 } 
 
+.list{
+    list-style: none;
+    padding-left: 0;
+    
+    }
 img {
     height: 100%;
     width: 100%;
@@ -44,4 +49,19 @@ img {
     font-weight: 800;
    
    }
+
+.Backdrop{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
  
+.modal-button{
+
+    display: flex;
+    flex-direction: row;
+   justify-content: flex-end;
+}

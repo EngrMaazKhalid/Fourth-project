@@ -1,54 +1,99 @@
-import { Card , CardMedia, CardContent, Typography, CardActions, Button} from "@mui/material";
+import { Card , CardMedia, CardContent, Typography, CardActions, Button, requirePropFactory} from "@mui/material";
 import { borderRadius, textAlign } from "@mui/system";
 import classes from './Card-section.module.css'
 import React from "react";
-import trainItem from "./TrainItem";
+import TrainItem from "./TrainItem";
 import AvailableTrain from "./AvailableTrain";
 
 
 
 
-const trainEx = [
-  {
-    name:'Bullet train',
-    id: '01',
-    price:'10.56'
-  },
-  {
-    name:'green-line',
-    id: '02',
-    price:'22.43'
-  },
-  {
-    name:'tez gaam',
-    id: '03',
-    price:'08.88'
+
+
+ 
+    
+  const trainEx = [
+    {
+      name:'Bullet train',
+      id: '01',
+      price: 10.56,
+      image: require('./train1.jpg')
+    },
+    {
+      name:'green-line',
+      id: '02',
+      price: 22.43,
+      image:require('./train2.jpg')
+    },
+    {
+      name:'tez gaam',
+      id: '03',
+      price: 8.88,
+      image: require('./train2.jpg')
+    }
+  ];
+  const TrainCard =() => {
+    const TrainList = trainEx.map((train) => (
+      <TrainItem
+        key={train.id}
+        name={train.name}
+        id={train.id}
+        price={train.price}
+        image={train.image}
+      />
+    ));
+  
+    return (
+<ul className={classes['list']}>{TrainList}</ul>
+);
   }
 
-]
 
 
-const TrainCard =() => {
 
-  const TrainList= (trainEx.map((train)=><trainItem key={train.id} name={train.name} price={train.price} />))
-    return(
-        <div className={classes['section2']}>
-               <div className={classes['Card-section']}>
+//   const trainEx = [
+    // {
+    //   name:'Bullet train',
+    //   id: '01',
+    //   price:'10.56'
+    // },
+    // {
+    //   name:'green-line',
+    //   id: '02',
+    //   price:'22.43'
+    // },
+    // {
+    //   name:'tez gaam',
+    //   id: '03',
+    //   price:'08.88'
+    // }
+  
+//   ]
+  
+//   const mealsList = trainEx.map((meal) => (
+//     <trainItem
+//       key={meal.id}
+//       id={meal.id}
+//       name={meal.name}
+//       price={meal.price}
+//     />
+//   ));
+//     return(
+        
                
-  <AvailableTrain>
+
     
-   <ul>{TrainList}</ul>
-   </AvailableTrain>
+//    <ul>{mealsList}</ul>
+ 
    
   
   
   
   
-  </div>
-  </div>
+  
  
-    )
-}
+//     )
+// }
 
 export default TrainCard
 

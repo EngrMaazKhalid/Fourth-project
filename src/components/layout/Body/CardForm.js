@@ -1,30 +1,78 @@
-import { FilledInput, FormControl, InputAdornment, InputLabel } from "@mui/material";
-import React, { useState } from "react";
-import classes from './Card-section.module.css'
+import { Button, CardActions } from "@mui/material";
+import React, { useRef, useState } from "react";
+import CardInput from "./CardInput";
+import classes from "../Header/header.module.css";
+
+const CardForm = (props) => {
+
+  const [amountIsValid, setAmountIsValid] = useState(true);
+  const amountInputRef = useRef();
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const enteredAmount = amountInputRef.current.value;
+   
+    const enteredAmountNumber = +enteredAmount;
+
+    if (
+      enteredAmount.trim().length === 0 ||
+      enteredAmountNumber < 1 ||
+      enteredAmountNumber > 5
+    ) {
+      setAmountIsValid(false);
+      return;
+    }
+    
+    props.onAddToCart(enteredAmountNumber);
+
+  };
 
 
-  
-  const CardForm=()=>{
- const [values, setValues]= useState({amount: ''});
+  return (
+    <CardActions
+      sx={{
+        marginLeft: "auto",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+      }}
+    >
+      <div className={classes["cardform"]}>
+      
+        <form onSubmit={submitHandler} >
+          <CardInput
+          ref={amountInputRef}
+          label='Amount'
+          input={{
+            id: 'amount_' + props.id,
+            type: 'number',
+            min: '1',
+            max: '5',
+            step: '1',
+            defaultValue: '1',
+            }}
+          />
+          <button>Add</button>
+          {!amountIsValid && <p>Please enter valid amount (1-5)</p>}
+        </form>
+      </div>
+    </CardActions>
+  );
+};
 
- const handleChange =(props) => (event) =>{
-    setValues({...values, [props]: event.target.value })
- }
+export default CardForm;
 
- 
-    return (
-     <div className={classes['cardform']} >
-    <h4>Amount :  </h4>
-        <FormControl  sx={{ width: '80px',  height:"30px", marginTop:'auto', borderRadius:'25px' ,marginBottom:'auto' , marginRight: '20px', paddingLeft:'10px'}} color='secondary' variant="filled" >
+/**
+  * <FormControl onSubmit={submitHandler} sx={{ width: '80px',  height:"30px", marginTop:'auto', borderRadius:'25px' ,marginBottom:'auto' , marginRight: '20px', paddingLeft:'10px'}} color='secondary' variant="filled" >
         
-        <FilledInput
-          id="filled-adornment-amount"
-          sx={{ width:'85px', height:"30px" , paddingBottom:'10px', borderRadius:'8px' }}
-          value={values.amount}
-          onChange={handleChange('amount')}
-          startAdornment={<InputAdornment position="start">$</InputAdornment>}
-        />
-      </FormControl>
-      </div> ) }
-
-            export default CardForm
+<Button
+          
+            size="large"
+            variant="contained"
+            color="secondary"
+            sx={{ borderRadius: "50px", color: "grey", width: "180px" }}
+          >
+            buy Ticket
+          </Button>
+  */

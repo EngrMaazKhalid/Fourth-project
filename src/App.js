@@ -6,6 +6,7 @@ import TrainCard from "./components/layout/Body/Card";
 import Description from "./components/layout/Header/DescrptionBox/Description";
 import { Button, Paper, Typography } from "@mui/material";
 import styled from "@emotion/styled";
+import CartContextProvider from "./components/Store/CartContextProvider";
 // import { createTheme, ThemeProvider, typography } from "@mui/system";
 
 
@@ -38,13 +39,12 @@ function App() {
 
 
   return (
-    <div className="App">
+    <CartContextProvider>
     <Navigation />
   <Headerp />
-
     <TrainCard />
       
-    </div>
+    </CartContextProvider>
   );
 }
 
