@@ -21,18 +21,26 @@ const ModalArea = (props) => {
   const TotalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
   const hasitem = cartCtx.item.length > 0;
 
-  const AdditemHandler = (id) => {};
-  const RemoveItemHandler = (id) => {};
+  const RemoveItemHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+  const cartItemRemoveHandler = (id) => {
+    cartCtx.removeItem(id);
+  };
+  const AdditemHandler =  (item) =>{
+    cartCtx.addItem({ ...item, Amount: 1 });
+  }
+  
   const cartItems = (
-    <ul className={classes["list"]}>
+    <ul className={classes["cart-item"]}>
       {cartCtx.item.map((item) => (
         <CartItem
           key={item.id}
           name={item.name}
           amount={item.Amount}
           price={item.price}
-          onRemove={AdditemHandler.bind(null, item.id)}
-          onAdd={RemoveItemHandler.bind(null, item)}
+          onRemove={cartItemRemoveHandler.bind(null, item.id)}
+          onAdd={AdditemHandler.bind(null, item)}
         />
       ))}
     </ul>
