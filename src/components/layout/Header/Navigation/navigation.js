@@ -28,14 +28,14 @@ const Navigation = () => {
         <div className={classes["train"]}>
           <img src={require("./download.png")} alt="train logo" className={classes['train-img']}></img>
         </div>
-        <Typography
-          variant="h4"
-          color="inherit"
-          component="div"
-          className={classes["Rail"]}
-        >
-          Rail Train
-        </Typography>
+       
+        
+        
+     <span className={classes["Rail"]}>
+    Rail Train
+     </span>
+    
+     
     <Modalpop />
         
       </Toolbar>

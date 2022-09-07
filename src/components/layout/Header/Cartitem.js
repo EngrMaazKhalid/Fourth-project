@@ -6,6 +6,7 @@ const CartItem = (props) => {
   return (
     <li ><div>
       <Card
+      className={classes['ModalCard']}
         sx={{
           display: "flex",
           flexDirection: "row",
@@ -15,11 +16,11 @@ const CartItem = (props) => {
           marginBottom: "2px",
         }}
       >
-      <CardContent sx={{display:'flex', flexDirection:'column', justifyContent:'space-evenly'}}>
-  <Typography gutterBottom variant="h5" sx={{marginRight: 'auto', textTransform:'uppercase', fontWeight:'700'}}>
+      <CardContent sx={{display:'flex', flexDirection:'column', justifyContent:'space-evenly'}} className={classes['content']}>
+  <Typography gutterBottom variant="h5" className={classes['AmountName']} sx={{marginRight: 'auto', textTransform:'uppercase', fontWeight:'700'}}>
   {props.name}
   </Typography>
-  <Typography variant="h6" color="red" sx={{fontWeight:'800', textAlign:'left'}}>
+  <Typography variant="h6" color="red" className={classes['Price']} sx={{fontWeight:'800', textAlign:'left'}}>
   <span>{price}</span>
             <span> x {props.amount}</span>
   </Typography>

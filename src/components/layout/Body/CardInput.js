@@ -1,7 +1,7 @@
-import { FilledInput, FormControl, InputAdornment, InputLabel, Button, Input } from "@mui/material";
+
 import React from "react";
 
-
+import classes from './Card-section.module.css'
   
   const CardInput=React.forwardRef((props,ref)=>{
 
@@ -9,7 +9,7 @@ import React from "react";
     return (
     <div>
       <label htmlFor={props.input.id}>{props.label}</label>
-      <input ref={ref} {...props.input} />
+      <input className={classes['input-style']} ref={ref} {...props.input} />
 
 </div>
 

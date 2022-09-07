@@ -1,81 +1,279 @@
-.main{
-    height: 80vh;
-    z-index: 0;
-  
-    
-  
-}
+/*-----------Navigation ----------------*/
 
-
-
-.project_header{
- /* background-image:  */
- 
-position:relative;
- background-image:linear-gradient(rgba(0, 0, 0, 0.699) ,rgba(0, 0, 0, 0.699)), url('./fikri-rasyid-3ba59K57wE4-unsplash.jpg');
- background-size: cover;
- background-position: center ;
- height: 100%;
- background-attachment: fixed;
- clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%); 
- z-index: 0;
-}
-
-
- .train{
-    height:70px;
-    width: 70px;
-  
-} 
-
-.list{
-    list-style: none;
-    padding-left: 0;
-    
-    }
 img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
-    
-    
-   }
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+@media only screen and (max-width: 700px) {
+  .card-Action {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media only screen and (max-width: 250px) {
+  .card-Action {
+    margin-left: 0;
+  }
+}
+.train {
+  height: 70px;
+  width: 70px;
+}
+@media only screen and (max-width: 700px) {
+  .train {
+    height: 55px;
+    width: 55px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .train {
+    height: 45px;
+    width: 45px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .train {
+    height: 40px;
+    width: 40px;
+  }
+}
 
-   .Rail{
-    padding-top: 23px;
-    padding-left: 10px;
-    text-transform: uppercase;
-    color: rgb(172, 172, 172);
-    font-weight: 800;
-   
-   }
+.Rail {
+  padding-top: 15px;
+  padding-left: 10px;
+  font-size: 2.125rem;
+  text-transform: uppercase;
+  color: rgb(172, 172, 172);
+  font-weight: 600;
+}
+@media only screen and (max-width: 700px) {
+  .Rail {
+    font-size: 2rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .Rail {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .Rail {
+    font-size: 1rem;
+  }
+}
 
-.Backdrop{
+
+@media only screen and (max-width: 700px) {
+  .Total {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .Total {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .Total {
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 315px) {
+  .Total {
+    display: none;
+  }
+}
+
+.bump {
+  animation: bump 300ms ease-out;
+}
+
+@keyframes bump {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*--------------------xxxxxxxxxxxxxxxxx--------------------*/
+
+/*--------------------HEADER----------------------*/
+
+.project_header {
+  /* background-image:  */
+
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.699), rgba(0, 0, 0, 0.699)),
+    url("./fikri-rasyid-3ba59K57wE4-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  background-attachment: fixed;
+  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+  z-index: 0;
+}
+
+.main {
+  height: 80vh;
+  z-index: 0;
+}
+/*--------------------xxxxxxxxxxxxxxxxx--------------------*/
+
+/*-----------------Card design ---------------*/
+.cardform {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 700px) {
+  .cardform {
     display: flex;
+    flex-direction: column;
+
+    margin-right: auto;
+    justify-content: space-between;
+  }
+}
+
+.AddBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  outline: 0;
+  border: 0;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  min-width: 64px;
+  padding: 8px 22px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  color: #fff;
+  background-color: #9c27b0;
+  border-radius: 50px;
+  margin-top: 10px;
+  width: 110px;
+}
+
+.AddBtn:hover {
+  background-color: #7b1fa2;
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+.AddBtn:active {
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/*---------------xxxxxxxxxxxxxxxxxxxxxxxx-------------------*/
+
+/*-------------------------MODAL-----------------*/
+
+.Backdrop {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: bold;
   font-size: 1.5rem;
   margin: 1rem 0;
 }
- 
-.modal-button{
 
-    display: flex;
-    flex-direction: row;
-   justify-content: flex-end;
+.modal-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.cart-item{
-    list-style: none;
+.cart-item {
+  list-style: none;
   margin: 0;
   padding: 0;
   max-height: 20rem;
   overflow: auto;
 }
 
-.button-div{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.button-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 500px){
+  .TotalAmount{
+    font-size: 1.2rem;
+  }
+  .Amount  {
+    font-size: 1.2rem;
+  }
+  .AmountName{
+    font-size: 1.2rem;
+  }
+  .Price{
+    font-size: 1.2rem;
+  }
+
+}
+@media only screen and (max-width: 315px){
+  .TotalAmount{
+    font-size: 1rem;
+  }
+  .Amount  {
+    font-size: 1rem;
+  }
+  .AmountName{
+    font-size: 1rem;
+  }
+  .Price{
+    font-size: 1rem;
+  }
+
+}
+
+@media only screen and (max-width: 450px){
+  .ModalCard{
+    flex-direction: column;
+  }
+  .button-div {
+    justify-content: start;
+    margin-bottom: 10px;
+  }
+  
+.Backdrop {
+  padding-left: 0;
+}
+
+.content{
+  padding-left: 0;
+}
 }

@@ -31,6 +31,7 @@ const CardForm = (props) => {
 
   return (
     <CardActions
+    className={classes['card-Action']}
       sx={{
         marginLeft: "auto",
         display: "flex",
@@ -43,7 +44,7 @@ const CardForm = (props) => {
         <form onSubmit={submitHandler} >
           <CardInput
           ref={amountInputRef}
-          label='Amount'
+          label='Seats : '
           input={{
             id: 'amount_' + props.id,
             type: 'number',
@@ -53,7 +54,8 @@ const CardForm = (props) => {
             defaultValue: '1',
             }}
           />
-          <button>Add</button>
+          <button className={classes['AddBtn']}>Add
+          </button>
           {!amountIsValid && <p>Please enter valid amount (1-5)</p>}
         </form>
       </div>

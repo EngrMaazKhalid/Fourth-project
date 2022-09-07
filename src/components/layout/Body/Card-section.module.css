@@ -2,8 +2,13 @@
     background-color: rgb(131, 130, 130);
 }
  
+.input-style:focus{
+    border: 2px solid #9c27b0;
+    
+    }
 
 
+    
 .Card-section{
     padding-top: 30px;
     display: flex;
@@ -12,14 +17,37 @@
     flex-wrap: wrap;
     
 }
-.cardform{
-    
-    display:flex;
-    flex-direction: row;
-    margin-right: auto;
-}
 
 .list{
 list-style: none;
+padding: 0;
 
 }
+@media only screen and (min-width: 700px){
+.body-card{
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    border: 2px solid black;
+    margin-bottom: 20px;
+   
+}
+}
+
+@media only screen and (max-width: 700px){
+    .body-card{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    border: 2px solid black;
+    }
+    }
+

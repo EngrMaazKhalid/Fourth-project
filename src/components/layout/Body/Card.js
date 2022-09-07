@@ -26,10 +26,10 @@ import AvailableTrain from "./AvailableTrain";
       image:require('./train2.jpg')
     },
     {
-      name:'tez gaam',
+      name:'Orange-line',
       id: '03',
       price: 8.88,
-      image: require('./train2.jpg')
+      image: require('./train1.jpg')
     }
   ];
   const TrainCard =() => {

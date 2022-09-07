@@ -26,7 +26,7 @@ const Modalpop = (props) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <MenuItem sx={{ marginLeft: "auto" }}>
+    <MenuItem sx={{ marginLeft: "auto", paddingRight:'0' }}>
     <HeaderCartButton onClick={handleOpen}  />
       <ModalArea onClose={handleClose} open={open} />
     </MenuItem>
